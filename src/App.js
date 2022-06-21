@@ -4,4 +4,4 @@ const App = () => {
   return <Counter />;
 };
 
-export default Counter;
+export default App;
