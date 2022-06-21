@@ -1,14 +1,10 @@
 import { Component } from "react";
 
 class Counter extends Component {
-  constructor(props) {
-    super(props);
-    // state의 초깃값 설정
-    this.state = {
-      number: 0,
-      fixedNumber: 0,
-    };
-  }
+  state = {
+    number: 0,
+    fixedNumber: 0,
+  };
   render() {
     const { number, fixedNumber } = this.state;
     return (
@@ -19,7 +15,15 @@ class Counter extends Component {
           // onClick을 통해 버튼이 클릭되었을 때 호출할 함수 지정
           onClick={() => {
             // this.setState를 사용하여 state에 새로운 값 넣을 수 있음
-            this.setState({ number: number + 1 });
+            this.setState((prevState) => {
+              return {
+                number: prevState.number + 1,
+              };
+            });
+            // 위 코드와 아래 코드 완전히 똑같은 기능
+            this.setState((prevState) => ({
+              number: prevState.number + 1,
+            }));
           }}
         >
           +1
