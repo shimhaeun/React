@@ -4,7 +4,7 @@ import Info from "./info";
 import Say from "./Say";
 
 const App = () => {
-  return <Counter />;
+  return <Info />;
 };
 
 export default App;
