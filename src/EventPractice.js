@@ -22,6 +22,14 @@ class EventPractice extends Component {
             // console.log(e.target.value); //onChange 이벤트 발생 시 앞으로 변할 인풋 값인 e.target.value 콘솔에 기록
           }}
         />
+        <button onClick={
+          () => {
+            alert(this.state.message);
+            this.setState({
+              message: ''
+            });
+          }
+        }>확인</button>
       </div>
     );
   }
