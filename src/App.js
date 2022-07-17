@@ -4,7 +4,7 @@ import Info from "./info";
 import Say from "./Say";
 
 const App = () => {
-  return <Info />;
+  return <EventPractice />;
 };
 
 export default App;
