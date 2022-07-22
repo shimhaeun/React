@@ -1,24 +1,30 @@
 import { Component } from "react";
-import Counter from "./Counter";
-import EventPractice from "./EventPractice";
-import Info from "./info";
-import IterationSample from "./IterationSample";
-import Say from "./Say";
-import ScrollBox from "./ScrollBox";
-import ValidationSample from "./ValidationSample";
+import LifeCycleSample from "./LifeCycleSample";
 
-class App extends Component {
-  render() {
-    return (
-      <IterationSample />
-      // <div>
-      //   <ScrollBox ref={(ref) => this.ScrollBox=ref}/>
-      //   <button onClick={() => this.ScrollBox.ScrollToBottom()}>
-      //     맨 밑으로~
-      //   </button>
-      // </div>
-    )
-  }
+//랜덤 색상 생성
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 
+class App extends Component {
+  state = { 
+    color:'#000000'
+  }
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <LifeCycleSample color={this.state.color}/>
+      </div>
+    );
+  }
+
+}
 export default App;
